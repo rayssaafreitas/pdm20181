@@ -21,6 +21,7 @@ class FormViewController: UIViewController {
     @IBOutlet weak var stNota: UIStepper!
     
     @IBOutlet weak var swPoder: UISwitch!
+    @IBOutlet weak var imagemPersonagem: UIImageView!
     
 
     var index: Int!
@@ -68,12 +69,12 @@ class FormViewController: UIViewController {
             
             let url = URL(string: personagem.image!)
             let data = try? Data(contentsOf: url!)
-            //if let imageData = data {
-              //  self.tfImagem.image = UIImage(data: imageData)
+                if let imageData = data {
+                self.imagemPersonagem.image = UIImage(data: imageData)
             }
         }
         
-        //self.tfPersonagem.becomeFirstResponder()
+        self.tfPersonagem.becomeFirstResponder()
     }
     
-//}
+}
